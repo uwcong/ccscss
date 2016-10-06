@@ -7,7 +7,7 @@
  */
 
 body, input, textarea, select, button {
-	font-family: "Helvetica Neue",STheiti,sans-serif;
+	font-family: "Helvetica Neue", STheiti, sans-serif;
 }
 
 body {
@@ -49,7 +49,7 @@ a {
 /* 为适配旧版不支持flex的缩写方法，要设置这样一个空标签 */
 .func_growSpace {
 	display: block;
-	width: 0px;
+	width: 0;
 	@include flex_grow(1);
 	@include flex_basis(0);
 }

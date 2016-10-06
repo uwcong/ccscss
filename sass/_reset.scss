@@ -16,12 +16,12 @@ article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, s
 
 body, input, textarea, select, button {
 	outline: none;
-	-webkit-text-size-adjust:none;
+	-webkit-text-size-adjust: none;
 }
 
 input, textarea, select, button {
-	font-size:inherit; // form control's default font in webkit is "-webkit-small-control"
-	-webkit-tap-highlight-color:rgba(0,0,0,0); // remove widget tap highlighted in mobile safari 
+	font-size: inherit; // form control's default font in webkit is "-webkit-small-control"
+	-webkit-tap-highlight-color: rgba(0,0,0,0); // remove widget tap highlighted in mobile safari 
 }
 
 input, textarea, fieldset, img {
@@ -38,7 +38,8 @@ html, body {
 }
 
 table {
-	border-collapse: collapse;border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 	font-size: inherit;
 }
 
@@ -54,11 +55,10 @@ img {
 	outline: none;
 }
 
-input[type=radio]::-ms-check, input[type=checkbox]::-ms-check{
+input[type=radio]::-ms-check, input[type=checkbox]::-ms-check {
 	display: none; // 去掉IE10&11的默认样式
 }
 
 select::-ms-expand {
 	display: none; // 去掉IE10&11的默认样式
 }
-
