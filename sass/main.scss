@@ -1,0 +1,16 @@
+@charset "utf-8";
+/**
+ * main.scss
+ * @author Cc 
+ * @date 2015-04-23
+ *
+ */
+
+/* mixin */
+@import "_mixin";
+
+/* reset 重置样式 */
+@import "_reset";
+
+/* base 基础样式，一般改这个，看不同项目的需要 */
+@import "_base";

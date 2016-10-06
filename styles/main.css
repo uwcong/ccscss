@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/**
+ * main.scss
+ * @author Cc 
+ * @date 2015-04-23
+ *
+ */
+/* mixin */
+/**
+ * _mixin.scss 常见样式封装、兼容性封装、常见工具方法
+ * @author Cc
+ * @date 2015-04-23
+ *
+ * --- prefixer --- 
+ * update in 2016-01-18
+ *
+ * --- flex ----
+ * #display_flex
+ * #flex
+ * #flex_grow
+ * #flex_shrink
+ * #flex_basis
+ * #flex_align_items
+ * #flex_justify_content
+ * #flex_childPos
+ *
+ * --- layout  ---
+ * #box_sizing
+ * #clear
+ *
+ * --- appearance ---
+ * #text_ellipsis
+ * #opacity
+ * #box_shadow
+ * #appearance
+ * #bg_gradient
+ *   #twoColor
+ *   #threeColor
+ *
+ * --- transform ---
+ * #transform
+ * #scale
+ * #skew
+ * #translate
+ * #rotate
+ * #perspective
+ * #origin
+ *
+ * --- transition ---
+ * #transition
+ * #transition-transform
+ *
+ * --- animation ---
+ * #animation
+ * #keyframes
+ *
+ * --- media ---
+ * #screenResolution
+ * #screenForIE10AndLater
+ * #screenForIE8
+ * #media
+ *
+ * --- other ---
+ * #inlineBlock
+ * #square
+ * #absoluteCenter
+ * #triangle
+ * #bfc
+ * #retina 1px line
+ *
+ * --- function ---
+ * update in 2016-01-21
+ * #strip-units
+ * #px2Rem
+ * 
+ */
+/* ------------------------------ prefixer ------------------------------ */
+/* 是否支持某个浏览器的前缀，如果你不想支持，可以设置为false */
+/* ------------------------------ flex ------------------------------ */
+/* #display_flex */
+/* #flex */
+/**
+ * 伸缩流方向
+ * @param: row | row-reverse | column | column-reverse
+ */
+/* #flex_grow */
+/* #flex_shrink */
+/* #flex_basis */
+/* #flex_align_items */
+/* #flex_justify_content */
+/* #flex_childPos horizontal/vertical */
+/* ------------------------------ layout ------------------------------ */
+/* #box_sizing */
+/* #clear */
+/* ------------------------------ appearance ------------------------------ */
+/* #text_ellipsis */
+/* #opacity */
+/* #box_shadow */
+/* #appearance */
+/* #bg_gradient 跨浏览器的渐变背景 */
+/* #twoColor 两种颜色的渐变 */
+/* 垂直渐变，自上而下 */
+/* 水平渐变，自左而右 */
+/* #threeColor 三种颜色的渐变 */
+/* 垂直渐变，自上而下 */
+/* 水平渐变，自左而右 */
+/* ------------------------------ transform ------------------------------ */
+/* #transform */
+/* #scale */
+/* #skew */
+/* #translate */
+/* #rotate */
+/* #perspective */
+/* #origin */
+/* ------------------------------ transition ------------------------------ */
+/* #transition */
+/* ------------------------------ animation ------------------------------ */
+/* #animation */
+/* #keyframes */
+/* ------------------------------ media ------------------------------ */
+/* #screenResolution */
+/* #screenForIE10AndLater 兼容IE10&11 */
+/* #screenForIE8 */
+/**
+  * #media 通用media设置
+  * @param {String} $attr (eg: "min-width" "max-width")
+  * @param {String} $val (eg: "1024px")
+  */
+/* ------------------------------ other ------------------------------ */
+/* #inlineBlock */
+/* #square 产生正方形的宽高 */
+/* #square 产生正方形的宽高 */
+/* #triangle 小三角 */
+/* #bfc */
+/* #retina 1px line */
+/* ------------------------------ other ------------------------------ */
+/* #strip-units */
+/* #px2Rem */
+/* reset 重置样式 */
+/**
+ * _reset.scss 重置样式
+ * @author Cc
+ * @date 2015-04-23
+ */
+/* line 8, ../sass/_reset.scss */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, ../sass/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 17, ../sass/_reset.scss */
+body, input, textarea, select, button {
+  outline: none;
+  -webkit-text-size-adjust: none;
+}
+
+/* line 22, ../sass/_reset.scss */
+input, textarea, select, button {
+  font-size: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 27, ../sass/_reset.scss */
+input, textarea, fieldset, img {
+  border: none;
+}
+
+/* line 31, ../sass/_reset.scss */
+ul, ol, li {
+  list-style: none;
+}
+
+/* line 35, ../sass/_reset.scss */
+html, body {
+  height: 100%;
+  position: relative;
+}
+
+/* line 40, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+}
+
+/* line 45, ../sass/_reset.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 49, ../sass/_reset.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 53, ../sass/_reset.scss */
+:focus {
+  outline: none;
+}
+
+/* line 57, ../sass/_reset.scss */
+input[type=radio]::-ms-check, input[type=checkbox]::-ms-check {
+  display: none;
+}
+
+/* line 61, ../sass/_reset.scss */
+select::-ms-expand {
+  display: none;
+}
+
+/* base 基础样式，一般改这个，看不同项目的需要 */
+/**
+ * _base.scss 项目基础样式、项目用方法、项目用function
+ * @author Cc
+ * @date 2015-04-23
+ *
+ */
+/* line 9, ../sass/_base.scss */
+body, input, textarea, select, button {
+  font-family: "Helvetica Neue",STheiti,sans-serif;
+}
+
+/* line 13, ../sass/_base.scss */
+body {
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  word-break: break-all;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 22, ../sass/_base.scss */
+a {
+  color: #1d8ae5;
+  -webkit-tap-highlight-color: transparent;
+  /* 扩大通用a标签点击时的表现区域 */
+}
+/* line 26, ../sass/_base.scss */
+a, a:hover, a:active {
+  outline: none;
+}
+/* line 29, ../sass/_base.scss */
+a, a:hover {
+  text-decoration: none;
+}
+/* line 33, ../sass/_base.scss */
+a:active {
+  position: relative;
+}
+/* line 35, ../sass/_base.scss */
+a:active:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  /* key note：事件穿透 */
+  top: -6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+
+/* 为适配旧版不支持flex的缩写方法，要设置这样一个空标签 */
+/* line 50, ../sass/_base.scss */
+.func_growSpace {
+  display: block;
+  width: 0px;
+  -ms-flex: 1;
+  -moz-box-flex-grow: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -webkit-box-flex-basis: 0;
+  -moz-box-flex-basis: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-basis: 0;
+  flex-basis: 0;
+}
