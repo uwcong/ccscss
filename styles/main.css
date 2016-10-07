@@ -67,10 +67,12 @@
  * #triangle
  * #bfc
  * #retina 1px line
+ * update in 2016-05-18
+ * #setFontSizeForRem
  *
  * --- function ---
  * update in 2016-01-21
- * #strip-units
+ * #stripUnits
  * #px2Rem
  * 
  */
@@ -133,8 +135,27 @@
 /* #triangle 小三角 */
 /* #bfc */
 /* #retina 1px line */
-/* ------------------------------ other ------------------------------ */
-/* #strip-units */
+/**
+ * #setFontSizeForRem
+ * 如果要精确控制，则用js来计算设置html的fontSize，如下：
+ * 
+ * (function (doc, win) {
+    var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+      docEl.style.fontSize = 37.5 * (clientWidth / 375) + 'px';
+    };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false); // DOM加载之后及资源加载之前去执行，即对应jQuery中的document ready
+    })(document, window);
+ * 
+ */
+/* ------------------------------ function ------------------------------ */
+/* #stripUnits */
 /* #px2Rem */
 /* reset 重置样式 */
 /**
@@ -188,27 +209,27 @@ table {
   font-size: inherit;
 }
 
-/* line 45, ../sass/_reset.scss */
+/* line 46, ../sass/_reset.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 49, ../sass/_reset.scss */
+/* line 50, ../sass/_reset.scss */
 img {
   max-width: 100%;
 }
 
-/* line 53, ../sass/_reset.scss */
+/* line 54, ../sass/_reset.scss */
 :focus {
   outline: none;
 }
 
-/* line 57, ../sass/_reset.scss */
+/* line 58, ../sass/_reset.scss */
 input[type=radio]::-ms-check, input[type=checkbox]::-ms-check {
   display: none;
 }
 
-/* line 61, ../sass/_reset.scss */
+/* line 62, ../sass/_reset.scss */
 select::-ms-expand {
   display: none;
 }
@@ -222,7 +243,7 @@ select::-ms-expand {
  */
 /* line 9, ../sass/_base.scss */
 body, input, textarea, select, button {
-  font-family: "Helvetica Neue",STheiti,sans-serif;
+  font-family: "Helvetica Neue", STheiti, sans-serif;
 }
 
 /* line 13, ../sass/_base.scss */
@@ -271,7 +292,7 @@ a:active:before {
 /* line 50, ../sass/_base.scss */
 .func_growSpace {
   display: block;
-  width: 0px;
+  width: 0;
   -ms-flex: 1;
   -moz-box-flex-grow: 1;
   -webkit-box-flex: 1;
