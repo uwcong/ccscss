@@ -104,6 +104,10 @@ $prefix-for-spec: true !default; // 标准版
     }
   }
 }
+// 调用范例：
+// selector {
+//   @include prefixer(box-shadow, $shadow, webkit spec);
+// }
 
 
 
