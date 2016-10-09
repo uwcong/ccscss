@@ -14,3 +14,35 @@
 
 /* base 基础样式，一般改这个，看不同项目的需要 */
 @import "_base";
+
+// demo for flex-box
+.m_flexBox {
+    @extend %display_flex;
+    width: 300px;
+    height: 100px;
+    // padding: 10px;
+    background-color: gray;
+    // @include flex_childPos('horizontal', center);
+    // @include flex_childPos('vertical', center);
+    .item {
+        width: 50px;
+        height: 50px;
+        background-color: #000;
+        color: red;
+        // @include flex_grow(1);
+        // @include flex_shrink(1);
+    }
+    .item1 {
+        background: yellow;
+        // @include flex_grow(2);
+        // align-self: flex-start;
+    }
+    .item2 {
+        background: green;
+        // @include flex_shrink(0);
+        @include align_self(center);
+    }
+    .item3 {
+        @include align_self(flex-end)
+    }
+}

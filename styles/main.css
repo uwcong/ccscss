@@ -15,128 +15,173 @@
  * update in 2016-01-18
  *
  * --- flex ----
- * #display_flex
- * #flex
- * #flex_grow
- * #flex_shrink
- * #flex_basis
- * #flex_align_items
- * #flex_justify_content
- * #flex_childPos
+ * display_flex
+ * flex
+ * flex_grow
+ * flex_shrink
+ * flex_basis
+ * flex_align_items
+ * flex_justify_content
+ * flex_childPos
  *
  * --- layout  ---
- * #box_sizing
- * #clear
+ * box_sizing
+ * clear
  *
  * --- appearance ---
- * #text_ellipsis
- * #opacity
- * #box_shadow
- * #appearance
- * #bg_gradient
+ * text_ellipsis
+ * opacity
+ * box_shadow
+ * appearance
+ * bg_gradient
  *   #twoColor
  *   #threeColor
  *
  * --- transform ---
- * #transform
- * #scale
- * #skew
- * #translate
- * #rotate
- * #perspective
- * #origin
+ * transform
+ * scale
+ * skew
+ * translate
+ * rotate
+ * perspective
+ * origin
  *
  * --- transition ---
- * #transition
- * #transition-transform
+ * transition
+ * transition-transform
  *
  * --- animation ---
- * #animation
- * #keyframes
+ * animation
+ * keyframes
  *
  * --- media ---
- * #screenResolution
- * #screenForIE10AndLater
- * #screenForIE8
- * #media
+ * screenResolution
+ * screenForIE10AndLater
+ * screenForIE8
+ * media
  *
  * --- other ---
- * #inlineBlock
- * #square
- * #absoluteCenter
- * #triangle
- * #bfc
- * #retina 1px line
+ * inlineBlock
+ * square
+ * absoluteCenter
+ * triangle
+ * bfc
+ * retina 1px line
  * update in 2016-05-18
- * #setFontSizeForRem
+ * setFontSizeForRem
  *
  * --- function ---
  * update in 2016-01-21
- * #stripUnits
- * #px2Rem
+ * stripUnits
+ * px2Rem
  * 
  */
 /* ------------------------------ prefixer ------------------------------ */
 /* 是否支持某个浏览器的前缀，如果你不想支持，可以设置为false */
 /* ------------------------------ flex ------------------------------ */
-/* #display_flex */
-/* #flex */
+/* display_flex */
+/* line 117, ../sass/_mixin.scss */
+.m_flexBox {
+  display: -o-box;
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 /**
- * 伸缩流方向
+ * 容器的属性
+ * flex-direction、flex-wrap、flex-flow、justify-content、align-items、align-content
+ */
+/**
+ * flex_direction 伸缩流方向，决定主轴 main axis 的方向
  * @param: row | row-reverse | column | column-reverse
  */
-/* #flex_grow */
-/* #flex_shrink */
-/* #flex_basis */
-/* #flex_align_items */
-/* #flex_justify_content */
-/* #flex_childPos horizontal/vertical */
+/* 
+ * flex_justify_content 属性定义了项目在主轴上的对齐方式
+ * @param: flex-start | flex-end | center | space-between | space-around
+ */
+/* 
+ * flex_align_items 属性定义项目在交叉轴上如何对齐
+ * @param: flex-start | flex-end | center | baseline | stretch
+ */
+/* flex_childPos horizontal/vertical */
+/**
+ * flex_align_content 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用，所以此时 flex-wrap 必须为 wrap。
+ * @param: flex-start | flex-end | center | space-between | space-around | stretch
+ */
+/**
+ * 项目的属性
+ * order、flex-grow、flex-shrink、flex-basis、flex、align-self
+ */
+/* 
+ * flex_grow 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+ * @param: <number>(default 0)
+ */
+/* 
+ * flex_shrink 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+ * @param: <number>(default 1)
+ */
+/* 
+ * flex_basis 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+ * @param: <length> | auto(default)
+ */
+/* 
+ * flex 是flex-grow, flex-shrink 和 flex-basis的简写，默认值为 0 1 auto，后两个属性可选。
+ * @param: flex-grow flex-shrink flex-basis
+ */
+/* 
+ * align_self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+ * @param: auto(default) | flex-start | flex-end | center | baseline | stretch
+ */
 /* ------------------------------ layout ------------------------------ */
-/* #box_sizing */
-/* #clear */
+/* box_sizing */
+/* clear */
 /* ------------------------------ appearance ------------------------------ */
-/* #text_ellipsis */
-/* #opacity */
-/* #box_shadow */
-/* #appearance */
-/* #bg_gradient 跨浏览器的渐变背景 */
-/* #twoColor 两种颜色的渐变 */
+/* text_ellipsis */
+/* opacity */
+/* box_shadow */
+/* appearance */
+/* bg_gradient 跨浏览器的渐变背景 */
+/* twoColor 两种颜色的渐变 */
 /* 垂直渐变，自上而下 */
 /* 水平渐变，自左而右 */
-/* #threeColor 三种颜色的渐变 */
+/* threeColor 三种颜色的渐变 */
 /* 垂直渐变，自上而下 */
 /* 水平渐变，自左而右 */
 /* ------------------------------ transform ------------------------------ */
-/* #transform */
-/* #scale */
-/* #skew */
-/* #translate */
-/* #rotate */
-/* #perspective */
-/* #origin */
+/* transform */
+/* scale */
+/* skew */
+/* translate */
+/* rotate */
+/* perspective */
+/* origin */
 /* ------------------------------ transition ------------------------------ */
-/* #transition */
+/* transition */
 /* ------------------------------ animation ------------------------------ */
-/* #animation */
-/* #keyframes */
+/* animation */
+/* keyframes */
 /* ------------------------------ media ------------------------------ */
-/* #screenResolution */
-/* #screenForIE10AndLater 兼容IE10&11 */
-/* #screenForIE8 */
+/* screenResolution */
+/* screenForIE10AndLater 兼容IE10&11 */
+/* screenForIE8 */
 /**
-  * #media 通用media设置
+  * media 通用media设置
   * @param {String} $attr (eg: "min-width" "max-width")
   * @param {String} $val (eg: "1024px")
   */
 /* ------------------------------ other ------------------------------ */
-/* #inlineBlock */
-/* #square 产生正方形的宽高 */
-/* #square 产生正方形的宽高 */
-/* #triangle 小三角 */
-/* #bfc */
-/* #retina 1px line */
+/* inlineBlock */
+/* square 产生正方形的宽高 */
+/* square 产生正方形的宽高 */
+/* triangle 小三角 */
+/* bfc */
+/* retina 1px line */
 /**
- * #setFontSizeForRem
+ * setFontSizeForRem
  * 如果要精确控制，则用js来计算设置html的fontSize，如下：
  * 
  * (function (doc, win) {
@@ -155,8 +200,8 @@
  * 
  */
 /* ------------------------------ function ------------------------------ */
-/* #stripUnits */
-/* #px2Rem */
+/* stripUnits */
+/* px2Rem */
 /* reset 重置样式 */
 /**
  * _reset.scss 重置样式
@@ -307,4 +352,39 @@ a:active:before {
   -webkit-flex-basis: 0;
   -ms-flex-basis: 0;
   flex-basis: 0;
+}
+
+/* line 19, ../sass/main.scss */
+.m_flexBox {
+  width: 300px;
+  height: 100px;
+  background-color: gray;
+}
+/* line 27, ../sass/main.scss */
+.m_flexBox .item {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  color: red;
+}
+/* line 35, ../sass/main.scss */
+.m_flexBox .item1 {
+  background: yellow;
+}
+/* line 40, ../sass/main.scss */
+.m_flexBox .item2 {
+  background: green;
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-align-self: center;
+  -o-align-self: center;
+  align-self: center;
+}
+/* line 45, ../sass/main.scss */
+.m_flexBox .item3 {
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  -ms-align-self: flex-end;
+  -o-align-self: flex-end;
+  align-self: flex-end;
 }
