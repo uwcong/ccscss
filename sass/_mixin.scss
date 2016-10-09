@@ -703,8 +703,9 @@ $driveWidth: (240,320,360,375,384,412,411,414,435,480,540,600,640,720,768,800,10
 }
 
 /* px2Rem */
+$html-font-size: 16px!default;
 $px-only: false; // true for lt IE8
-@function px2Rem($pxs, $base-font-size: 108px) {
+@function px2Rem($pxs, $font-size:$html-font-size) {
   $list: ();
   @each $px in $pxs {
     @if (unitless($px)) {
@@ -717,7 +718,7 @@ $px-only: false; // true for lt IE8
         $list: append($list, $px);
       }
       @else {
-        $list: append($list, ($px / $base-font-size) * 1rem);
+        $list: append($list, ($px / $font-size) * 1rem);
       }
     }
     @else {
